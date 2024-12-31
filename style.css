@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #111;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .content {
+    text-align: center;
+    position: relative;
+  }
+  
+  .year {
+    font-size: 150px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #ff0;
+    text-shadow: 
+      0 0 30px rgba(255, 215, 0, 1), 
+      0 0 50px rgba(255, 215, 0, 0.8), 
+      0 0 100px rgba(255, 215, 0, 0.8),
+      0 0 150px rgba(255, 215, 0, 1);
+    animation: yearChange 5s forwards;
+  }
+  
+  .message h1 {
+    font-size: 80px;
+    animation: fadeIn 3s 5s forwards;
+    letter-spacing: 3px;
+    color: cyan;
+    font-style: italic;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 1), 0 0 50px rgba(255, 0, 0, 0.9), 0 0 30px rgba(255, 20, 147, 1);
+  }
+  
+  @keyframes yearChange {
+    0% {
+      color: #ff8400;
+      text-shadow: 0 0 30px rgba(255, 215, 0, 1), 0 0 50px rgba(255, 215, 0, 0.8);
+    }
+    50% {
+      color: #145aff;
+      text-shadow: 0 0 30px rgba(255, 20, 147, 1), 0 0 50px rgba(255, 20, 147, 1);
+    }
+    100% {
+      color: #ff14eb;
+      text-shadow: 0 0 40px rgba(255, 20, 147, 1), 0 0 80px rgba(255, 20, 147, 1);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .star {
+    position: absolute;
+    font-size: 30px;
+    color: #fff;
+    opacity: 0;
+    animation: starAnimation 2s infinite, flicker 0.2s infinite;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 215, 0, 0.8);
+  }
+  
+  @keyframes starAnimation {
+    0% {
+      opacity: 0;
+      top: -10px;
+      left: 50%;
+    }
+    50% {
+      opacity: 1;
+      top: 50%;
+      left: 20%;
+    }
+    100% {
+      opacity: 0;
+      top: 100%;
+      left: 80%;
+    }
+  }
+  
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .firework {
+    position: absolute;
+    background: radial-gradient(circle, #ff0, #ff6347, #ff1493);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: fireworkAnimation 1s forwards, fireworkFlicker 0.5s infinite;
+    opacity: 0;
+  }
+  
+  @keyframes fireworkAnimation {
+    0% {
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+      transform: scale(1) translateX(0) translateY(0);
+    }
+    100% {
+      width: 40px;
+      height: 40px;
+      opacity: 0;
+      transform: scale(4) translateX(100px) translateY(100px);
+    }
+  }
+  
+  @keyframes fireworkFlicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Glowing border effect for the year */
+  .year {
+    border: 3px solid #ff1493;
+    padding: 20px;
+    border-radius: 20px;
+    animation: glowingBorder 1.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glowingBorder {
+    0% {
+      border-color: #ff1493;
+      box-shadow: 0 0 15px #ff1493, 0 0 25px #ff1493;
+    }
+    50% {
+      border-color: #ff6347;
+      box-shadow: 0 0 30px #ff6347, 0 0 50px #ff6347;
+    }
+    100% {
+      border-color: #ff0;
+      box-shadow: 0 0 50px #ff0, 0 0 75px #ff0;
+    }
+  }
+  
+  /* Glowing effect for the message */
+  .message h1 {
+    animation: messageGlow 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes messageGlow {
+    0% {
+      text-shadow: 0 0 15px rgb(255, 119, 0), 0 0 50px rgba(255, 0, 0, 1);
+    }
+    50% {
+      text-shadow: 0 0 25px rgb(0, 174, 255), 0 0 40px rgba(255, 20, 147, 1);
+    }
+    100% {
+      text-shadow: 0 0 30px rgb(139, 32, 139), 0 0 70px rgba(255, 0, 255, 1);
+    }
+  }
+  
